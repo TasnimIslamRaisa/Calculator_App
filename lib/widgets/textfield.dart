@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 
 class CustomeTextField extends StatelessWidget {
   const CustomeTextField({
-    super.key,
-  });
+    Key? key,
+    required this.controller,
+  }) : super(key: key);
+
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 35),
       child: TextField(
-        controller: TextEditingController(),
+        controller: controller,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
